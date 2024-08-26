@@ -7,6 +7,20 @@ import { MarvelService } from '../../services/marvel.service';
   styleUrls: ['./character-list.component.css']
 })
 export class CharacterListComponent  {
-  
+
+  personajes: = [];
+
+  constructor(
+    private marvelService: MarvelService,
+  ) {}
+
+  ngOnInit() {
+    this.marvelService.getCharacters().subscribe(data => {
+      console.log(data.data.results);
+
+      this.personajes = data.data.results;
+    })
+  }
+
 }
 

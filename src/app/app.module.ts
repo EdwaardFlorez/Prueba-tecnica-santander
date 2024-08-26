@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterSearchComponent } from './components/character-search/character-search.component';
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
+import { MarvelService } from './services/marvel.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { CharacterDetailComponent } from './components/character-detail/characte
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    MarvelService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
